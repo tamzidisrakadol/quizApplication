@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuizApplication</string>
+    <string name="quiz_time">QUIZ TIME</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
+    <string name="sign_in_with_google">Sign in with GOOGLE</string>
+    <string name="your_web_client_id">455657062914-ii59re4aagnt3nvrv8bgfkdmjc38ft6t.apps.googleusercontent.com</string>
 </resources>
