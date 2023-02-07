@@ -13,8 +13,9 @@ import com.example.quizapplication.model.CategoryModel
 import com.example.quizapplication.utils.ColorPicker
 import com.example.quizapplication.utils.IconPicker
 
-class CategoryAdapter(private val categoryList: List<CategoryModel>,val context:Context) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(private val categoryList: List<CategoryModel>,val context:Context,var onItemClick: OnItemClick) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     private lateinit var itemsLayoutBinding: ItemsLayoutBinding
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         itemsLayoutBinding = ItemsLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -30,6 +31,9 @@ class CategoryAdapter(private val categoryList: List<CategoryModel>,val context:
         holder.bind(categoryModel)
         holder.layoutBinding.cardView.setCardBackgroundColor(Color.parseColor(ColorPicker.getColor()))
         holder.layoutBinding.itemIcon.setImageResource(IconPicker.getIcon())
+        holder.layoutBinding.root.setOnClickListener {
+            onItemClick.onItemClickListener(categoryModel)
+        }
     }
 
 
@@ -37,6 +41,7 @@ class CategoryAdapter(private val categoryList: List<CategoryModel>,val context:
 
         fun bind(categoryModel: CategoryModel){
             layoutBinding.categoryModel = categoryModel
+
         }
     }
 }
