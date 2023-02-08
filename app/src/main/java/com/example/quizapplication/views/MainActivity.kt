@@ -1,5 +1,6 @@
 package com.example.quizapplication.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -46,7 +47,11 @@ class MainActivity : AppCompatActivity(), OnItemClick {
     }
 
     override fun onItemClickListener(categoryModel: CategoryModel) {
-        
+        var categoryName = categoryModel.categoryName
+        val intent = Intent(this,QuestionActivity::class.java)
+        intent.putExtra("category",categoryName)
+        startActivity(intent)
+
     }
 
 }
