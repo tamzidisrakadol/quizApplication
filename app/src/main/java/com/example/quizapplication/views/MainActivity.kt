@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), OnItemClick {
             for (document in it) {
                 val category = document.toObject(CategoryModel::class.java)
                 categoryModelList.add(category)
-                Log.d("Quiz","Ques $category")
+             //   Log.d("Quiz","Ques $category")
             }
             adapter.notifyDataSetChanged()
         }
